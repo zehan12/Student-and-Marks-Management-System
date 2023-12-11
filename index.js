@@ -56,6 +56,50 @@ app.get("/students", async (req, res) => {
   }
 });
 
+app.get('/fetch_results', async (req, res) => {
+  const { student_id } = req.query;
+
+  try {
+    let students = [];
+
+    if (student_id) {
+      students = await prisma.student.findMany({
+        where: { student_id: parseInt(student_id) },
+        include: { marks: true },
+      });
+    } else {
+      students = await prisma.student.findMany({ include: { marks: true } });
+    }
+
+    const results = students.map((student) => {
+      const totalMarks = student.marks.reduce((sum, mark) => sum + mark.marks, 0);
+      const percentage = (totalMarks / (student.marks.length * 100)) * 100;
+      let result = '';
+
+      if (percentage < 35) {
+        result = 'Fail';
+      } else if (percentage >= 35 && percentage < 60) {
+        result = 'Second Class';
+      } else if (percentage >= 60 && percentage < 85) {
+        result = 'First Class';
+      } else {
+        result = 'Distinction';
+      }
+
+      return {
+        student_name: student.student_name,
+        percentage: percentage.toFixed(2),
+        result,
+      };
+    });
+
+    res.status(200).json(results);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 app.get("*", function (_, res) {
   res.send({ message: "route not exit" });
 });
