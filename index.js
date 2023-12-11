@@ -10,8 +10,40 @@ const prisma = new PrismaClient();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const baseURL = "https://student-and-marks-api.onrender.com";
+
 app.get("/", (_, res) => {
-  res.send({ message: "hello from backend" });
+  res.send({
+    message: "Welcome to the Student and Marks Management System API",
+    endpoints: {
+      getStudentsWithPagination: {
+        description: "Retrieve a list of students with pagination support.",
+        endpoint: `${baseURL}/students`,
+        method: "GET",
+        parameters: {
+          page: {
+            description: "Page number for pagination (optional)",
+          },
+          length: {
+            description: "Number of students per page (optional)",
+          },
+          query: {
+            description: "Filter students by id, name, or standard (optional)",
+          },
+        },
+      },
+      fetchResults: {
+        description: "Fetch overall results for students.",
+        endpoint: `${baseURL}/fetch_results`,
+        method: "GET",
+        parameters: {
+          student_id: {
+            description: "Fetch results for a specific student (optional)",
+          },
+        },
+      },
+    },
+  });
 });
 
 app.get("/students", async (req, res) => {
