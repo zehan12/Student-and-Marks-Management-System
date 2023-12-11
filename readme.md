@@ -5,7 +5,7 @@
 ### support and fetching overall results.
 
 ### API Endpoint
-``
+`https://student-and-marks-api.onrender.com/`
 
 ### Tech Stack
 * Node.js: The runtime environment for running JavaScript on the server-side.
