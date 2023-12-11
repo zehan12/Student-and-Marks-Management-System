@@ -144,7 +144,8 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null
+    "rootEnvPath": "../../../.env",
+    "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../..",
   "clientVersion": "5.7.0",
@@ -153,7 +154,6 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -163,8 +163,7 @@ const config = {
     }
   },
   "inlineSchema": "Z2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyIKICBvdXRwdXQgICA9ICIuL2dlbmVyYXRlZC9jbGllbnQiCn0KCmRhdGFzb3VyY2UgZGIgewogIHByb3ZpZGVyID0gInBvc3RncmVzcWwiCiAgdXJsICAgICAgPSBlbnYoIkRBVEFCQVNFX1VSTCIpCn0KCm1vZGVsIFN0dWRlbnQgewogIHN0dWRlbnRfaWQgICAgSW50ICAgICAgIEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpCiAgc3R1ZGVudF9uYW1lICBTdHJpbmcKICBzdGFuZGFyZCAgICAgIFN0cmluZwogIG1hcmtzICAgICAgICAgTWFya3NbXQp9Cgptb2RlbCBNYXJrcyB7CiAgbWFya3NfaWQgICAgICBJbnQgICAgICAgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkKICBzdHVkZW50X2lkICAgIEludAogIHN1YmplY3RfbmFtZSAgU3RyaW5nCiAgbWFya3MgICAgICAgICBJbnQKICB0ZXN0X2RhdGUgICAgIERhdGVUaW1lCiAgc3R1ZGVudCAgICAgICBTdHVkZW50ICAgIEByZWxhdGlvbihmaWVsZHM6IFtzdHVkZW50X2lkXSwgcmVmZXJlbmNlczogW3N0dWRlbnRfaWRdKQp9",
-  "inlineSchemaHash": "e9e2af15d1e99742a9de4702e3f3498e90b3082c5e1b3a17e505d03ba1ecdd75",
-  "noEngine": false
+  "inlineSchemaHash": "e9e2af15d1e99742a9de4702e3f3498e90b3082c5e1b3a17e505d03ba1ecdd75"
 }
 config.dirname = '/'
 
