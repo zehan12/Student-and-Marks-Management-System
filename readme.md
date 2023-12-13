@@ -1,4 +1,6 @@
-# Student and Marks Management System
+# Zithara Task
+
+## Student and Marks Management System
 
 #### This Node.js application manages student information and their marks in multiple subjects. It provides REST endpoints for retrieving student details with pagination
 
